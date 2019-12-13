@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-    <UserSecretsId>c3baea2f-5643-4e95-9485-79145c6cfac8</UserSecretsId>
+    <UserSecretsId>c3baea2f-5643-4e95-9485-79145c6cfac8</UserSecretsId> <!--local development TLS certificate password is stored in user secrets-->
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
