@@ -6,3 +6,20 @@ services:
     build:
       context: .
       dockerfile: NetCoreEventFlow.Api/Dockerfile
+
+  netcoreeventflow.db:
+    image: eventstore/eventstore
+    ports:
+      - "2113:2113"
+      - "1113:1113"
+    volumes:
+      - type: volume
+        source: netcoreeventflow-volume-data
+        target: /var/lib/eventstore
+      - type: volume
+        source: netcoreeventflow-volume-logs
+        target: /var/log/eventstore
+
+volumes:
+  netcoreeventflow-volume-data:
+  netcoreeventflow-volume-logs:
