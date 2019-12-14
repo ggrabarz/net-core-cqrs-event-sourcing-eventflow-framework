@@ -1,7 +1,7 @@
 ﻿using EventFlow.Configuration;
 using EventFlow.ReadStores;
 using Microsoft.AspNetCore.Mvc;
-using NetCoreEventFlow.Api.Elements;
+using NetCoreEventFlow.Api.Core.ReadModel;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,7 +22,7 @@ namespace NetCoreEventFlow.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult> ReplayEvents()
         {
-            await _readModelPopulator.PopulateAsync<ExampleReadModel>(CancellationToken.None);
+            await _readModelPopulator.PopulateAsync<InventoryItemReadModel>(CancellationToken.None);
             return Accepted("Read models are replayed");
         }
 
@@ -30,7 +30,7 @@ namespace NetCoreEventFlow.Api.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult> DeleteEvents()
         {
-            await _readModelPopulator.PurgeAsync<ExampleReadModel>(CancellationToken.None);
+            await _readModelPopulator.PurgeAsync<InventoryItemReadModel>(CancellationToken.None);
             return Ok("Read models deleted");
         }
     }

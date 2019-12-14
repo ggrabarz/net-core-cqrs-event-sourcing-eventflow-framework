@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: NetCoreEventFlow.Api/Dockerfile
+    depends_on:
+      - netcoreeventflow.db
 
   netcoreeventflow.db:
     image: eventstore/eventstore
