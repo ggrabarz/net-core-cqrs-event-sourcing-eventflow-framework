@@ -1,4 +1,5 @@
 ﻿using EventFlow;
+using EventFlow.Aggregates.ExecutionResults;
 using EventFlow.Queries;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreEventFlow.Api.Core.Commands;
@@ -60,7 +61,15 @@ namespace NetCoreEventFlow.Api.Controllers
         [HttpPost("{id}/IncreaseAmmount")]
         public async Task<ActionResult> CheckIn([FromRoute] string id, [FromQuery] int number)
         {
-            await _commandBus.PublishAsync(new CheckInItemsToInventoryCommand(new InventoryItemId(id), number), CancellationToken.None);
+            var result = await _commandBus.PublishAsync(new CheckInItemsToInventoryCommand(new InventoryItemId(id), number), CancellationToken.None);
+            if (!result.IsSuccess)
+            {
+                foreach(var error in (result as FailedExecutionResult).Errors)
+                {
+                    ModelState.AddModelError("number", error);
+                }
+                return BadRequest(ModelState);
+            }
             return NoContent();
         }
 

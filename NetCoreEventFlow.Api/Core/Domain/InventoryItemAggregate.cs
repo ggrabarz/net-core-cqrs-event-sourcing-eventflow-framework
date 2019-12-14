@@ -6,6 +6,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using EventFlow.Snapshots.Strategies;
+using NetCoreEventFlow.Api.Core.Domain.Specifications;
+using System.Linq;
 
 namespace NetCoreEventFlow.Api.Core.Domain
 {
@@ -60,7 +62,11 @@ namespace NetCoreEventFlow.Api.Core.Domain
 
         public IExecutionResult CheckIn(int count)
         {
-            if (count <= 0) throw new InvalidOperationException("must have a count greater than 0 to add to inventory");
+            var errors = new CheckInNumberSpecification().WhyIsNotSatisfiedBy(count);
+            if (errors.Any())
+            {
+                return ExecutionResult.Failed(errors);
+            }
             Emit(new ItemsCheckedInToInventoryEvent(count));
             return ExecutionResult.Success();
         }
