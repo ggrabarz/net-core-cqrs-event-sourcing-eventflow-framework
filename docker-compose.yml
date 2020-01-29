@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}netcoreeventflowapi
     build:
       context: .
-      dockerfile: NetCoreEventFlow.Api/Dockerfile
+      dockerfile: Projects/NetCoreEventFlow.Api/Dockerfile
     depends_on:
       - netcoreeventflow.db
 

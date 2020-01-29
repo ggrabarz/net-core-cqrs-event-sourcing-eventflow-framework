@@ -3,9 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreEventFlow.Api", "NetCoreEventFlow.Api\NetCoreEventFlow.Api.csproj", "{234226E0-CF67-4C84-B0D3-337BE3CD47FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreEventFlow.Api", "Projects\NetCoreEventFlow.Api\NetCoreEventFlow.Api.csproj", "{234226E0-CF67-4C84-B0D3-337BE3CD47FF}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7DAD72A0-3765-4A9A-889F-88A6A31E5A81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{B5E04F45-048E-48FF-8FFD-A05FAFC4D141}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{320A5FBB-3678-4504-B316-93A66A8596D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreEventFlow.Api.Tests", "Tests\NetCoreEventFlow.Api.Tests\NetCoreEventFlow.Api.Tests.csproj", "{CE2C85A0-33D7-401A-B69A-D3C84C843AD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEventFlow.Application", "Projects\NetCoreEventFlow.Application\NetCoreEventFlow.Application.csproj", "{6D9CA9D7-4A0C-4E0B-A458-2F80539EA86B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEventFlow.Common", "Projects\NetCoreEventFlow.Common\NetCoreEventFlow.Common.csproj", "{4E9DD759-B53B-4790-9E08-689169273A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEventFlow.Domain", "Projects\NetCoreEventFlow.Domain\NetCoreEventFlow.Domain.csproj", "{EDA29895-1911-43C2-8E50-DFC4DDECA28D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEventFlow.Persistence", "Projects\NetCoreEventFlow.Persistence\NetCoreEventFlow.Persistence.csproj", "{595B6384-F510-460B-8435-5DFB07933275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEventFlow.ReadModel", "Projects\NetCoreEventFlow.ReadModel\NetCoreEventFlow.ReadModel.csproj", "{219D9DCF-D5A5-434C-A7BF-0D71E2EA228C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEventFlow.Domain.Tests", "Tests\NetCoreEventFlow.Domain.Tests\NetCoreEventFlow.Domain.Tests.csproj", "{99A8FF4D-54DC-4F17-BC57-EFC1D26C3EC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +39,48 @@ Global
 		{7DAD72A0-3765-4A9A-889F-88A6A31E5A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DAD72A0-3765-4A9A-889F-88A6A31E5A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DAD72A0-3765-4A9A-889F-88A6A31E5A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE2C85A0-33D7-401A-B69A-D3C84C843AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2C85A0-33D7-401A-B69A-D3C84C843AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2C85A0-33D7-401A-B69A-D3C84C843AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2C85A0-33D7-401A-B69A-D3C84C843AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9CA9D7-4A0C-4E0B-A458-2F80539EA86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9CA9D7-4A0C-4E0B-A458-2F80539EA86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9CA9D7-4A0C-4E0B-A458-2F80539EA86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9CA9D7-4A0C-4E0B-A458-2F80539EA86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9DD759-B53B-4790-9E08-689169273A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9DD759-B53B-4790-9E08-689169273A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9DD759-B53B-4790-9E08-689169273A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9DD759-B53B-4790-9E08-689169273A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA29895-1911-43C2-8E50-DFC4DDECA28D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA29895-1911-43C2-8E50-DFC4DDECA28D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA29895-1911-43C2-8E50-DFC4DDECA28D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA29895-1911-43C2-8E50-DFC4DDECA28D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{595B6384-F510-460B-8435-5DFB07933275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595B6384-F510-460B-8435-5DFB07933275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595B6384-F510-460B-8435-5DFB07933275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595B6384-F510-460B-8435-5DFB07933275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219D9DCF-D5A5-434C-A7BF-0D71E2EA228C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219D9DCF-D5A5-434C-A7BF-0D71E2EA228C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219D9DCF-D5A5-434C-A7BF-0D71E2EA228C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219D9DCF-D5A5-434C-A7BF-0D71E2EA228C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A8FF4D-54DC-4F17-BC57-EFC1D26C3EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A8FF4D-54DC-4F17-BC57-EFC1D26C3EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A8FF4D-54DC-4F17-BC57-EFC1D26C3EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A8FF4D-54DC-4F17-BC57-EFC1D26C3EC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{234226E0-CF67-4C84-B0D3-337BE3CD47FF} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{7DAD72A0-3765-4A9A-889F-88A6A31E5A81} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{CE2C85A0-33D7-401A-B69A-D3C84C843AD8} = {320A5FBB-3678-4504-B316-93A66A8596D5}
+		{6D9CA9D7-4A0C-4E0B-A458-2F80539EA86B} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{4E9DD759-B53B-4790-9E08-689169273A46} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{EDA29895-1911-43C2-8E50-DFC4DDECA28D} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{595B6384-F510-460B-8435-5DFB07933275} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{219D9DCF-D5A5-434C-A7BF-0D71E2EA228C} = {B5E04F45-048E-48FF-8FFD-A05FAFC4D141}
+		{99A8FF4D-54DC-4F17-BC57-EFC1D26C3EC5} = {320A5FBB-3678-4504-B316-93A66A8596D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FBB3BF3E-3985-4D03-A86E-15FBCD363C0A}

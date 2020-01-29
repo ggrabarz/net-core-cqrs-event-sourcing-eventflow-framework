@@ -31,7 +31,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44310/api/values/inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc",
+					"raw": "https://localhost:44310/api/values/{{inventoryId}}",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -40,7 +40,7 @@
 					"path": [
 						"api",
 						"values",
-						"inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc"
+						"{{inventoryId}}"
 					]
 				}
 			},
@@ -52,7 +52,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44310/api/values?name=test0",
+					"raw": "https://localhost:44310/api/values?name=sampleItem",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -65,7 +65,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "test0"
+							"value": "sampleItem"
 						}
 					]
 				}
@@ -85,7 +85,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44310/api/values/inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc/ChangeName?name=test2",
+					"raw": "https://localhost:44310/api/values/{{inventoryId}}/ChangeName?name=newName",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -94,13 +94,13 @@
 					"path": [
 						"api",
 						"values",
-						"inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc",
+						"{{inventoryId}}",
 						"ChangeName"
 					],
 					"query": [
 						{
 							"key": "name",
-							"value": "test2"
+							"value": "newName"
 						}
 					]
 				}
@@ -120,7 +120,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44310/api/values/inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc/IncreaseAmmount?number=10",
+					"raw": "https://localhost:44310/api/values/{{inventoryId}}/IncreaseAmmount?number=10",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -129,7 +129,7 @@
 					"path": [
 						"api",
 						"values",
-						"inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc",
+						"{{inventoryId}}",
 						"IncreaseAmmount"
 					],
 					"query": [
@@ -155,7 +155,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44310/api/values/inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc/DecreaseAmmount?number=3",
+					"raw": "https://localhost:44310/api/values/{{inventoryId}}/DecreaseAmmount?number=3",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -164,7 +164,7 @@
 					"path": [
 						"api",
 						"values",
-						"inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc",
+						"{{inventoryId}}",
 						"DecreaseAmmount"
 					],
 					"query": [
@@ -190,7 +190,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://localhost:44310/api/values/inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc",
+					"raw": "https://localhost:44310/api/values/{{inventoryId}}",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -199,7 +199,7 @@
 					"path": [
 						"api",
 						"values",
-						"inventoryitem-95605f4a-4d34-4adb-a7d1-a639b5c3e6cc"
+						"{{inventoryId}}"
 					]
 				}
 			},
@@ -266,6 +266,14 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9fe38053-214c-475e-85a4-df1c501ff4fd",
+			"key": "inventoryId",
+			"value": "",
+			"type": "string"
 		}
 	],
 	"protocolProfileBehavior": {}
